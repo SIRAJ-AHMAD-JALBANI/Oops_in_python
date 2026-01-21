@@ -15,7 +15,11 @@ class Movie:
 
     def __str__(self):
         return f'{self.title} ({self.year}) - {self.duration} min, {self.director}'
-
+class TVSeries(Movie):
+    def super().__init__(self, title, year, director, duration, seasons, total_episodes):
+        
+        self.seasons = seasons
+        self.total_episodes = total_episodes
 class MediaCatalogue:
     def __init__(self):
         self.items = []
@@ -38,7 +42,7 @@ catalogue = MediaCatalogue()
 try:
     movie1 = Movie('The Matrix', 1999, 'The Wachowskis', 136)
     catalogue.add(movie1)
-    movie2 = Movie('The abc', 1945,'abc',232)
+    movie2 = Movie('Inception', 2010, 'Christopher Nolan', 148)
     catalogue.add(movie2)
     print(catalogue)
 except ValueError as e:
